@@ -31,6 +31,14 @@ final class Responder {
         let action: String = "onSuccess"
     }
     
+    class Show: Base, JSResponder {
+        func receiveJSCall(data: [String : Any]) {
+            delegate?.onShow(args: data)
+        }
+        
+        let action: String = "onShow"
+    }
+    
     class Error: Base, JSResponder {
         func receiveJSCall(data: [String : Any]) {
             delegate?.onError(args: data)

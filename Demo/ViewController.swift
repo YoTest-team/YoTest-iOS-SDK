@@ -30,24 +30,30 @@ class ViewController: UIViewController, YoTestDelegate {
     
     @IBAction func verify() {
         capture?.verify()
+//        YoTest.toast(message: "已通过友验智能验证",
+//                     hide: 2)
     }
     
     func onSuccess(args: [String : Any]) {
-        logV("onSuccess args: \(args)")
+        print("onSuccess args: \(args)")
     }
     
     func onReady(args: [String : Any]) {
-        logV("onReady args: \(args)")
+        print("onReady args: \(args)")
+    }
+    
+    func onShow(args: [String : Any]) {
+        print("onShow args: \(args)")
     }
     
     func onClose(args: [String : Any]) {
-        logV("onClose args: \(args)")
+        print("onClose args: \(args)")
         capture?.close()
 //        YoTest.destroy()
     }
     
     func onError(args: [String : Any]) {
-        logV("onError args: \(args)")
+        print("onError args: \(args)")
     }
 }
 

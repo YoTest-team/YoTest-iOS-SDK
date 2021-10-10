@@ -7,22 +7,35 @@
 
 完整使用逻辑可以参照以下代码：
 
+AppDelegate
+
+application(_:didFinishLaunchingWithOptions:)->Bool
+
 ```
-    YoTest.RegistSDK(auth: Auth(accessId: "Your accessId")) { success in
-        // TODO: 如果成功了，可以初始化 YoTest 实例对象
-    }
+YoTest.RegistSDK(auth: Auth(accessId: "Your accessId")) { success in
+    // TODO: 如果成功了，可以初始化 YoTest 实例对象
+}
 ```
+
+验证页面
+
+```
+var x: YoTest?
+```
+
+点击验证时
 
 
 ```
-    let x: YoTest
+if x == nil {
     do {
-        x = try YoTest(with: delegate)
+    x = try YoTest(with: delegate)
     } catch {
         print("\(error)")
         return
     }
-    x.verify()
+}
+x?.verify()
 ```
 
 

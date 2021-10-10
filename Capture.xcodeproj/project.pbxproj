@@ -20,6 +20,8 @@
 		C764C9412703200200A63FBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C764C9402703200200A63FBE /* Assets.xcassets */; };
 		C764C9442703200200A63FBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C764C9422703200200A63FBE /* LaunchScreen.storyboard */; };
 		C764C9492703200C00A63FBE /* YoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C9282702CAF500A63FBE /* YoTest.swift */; };
+		C772D4AA27131FBA00DE4592 /* YoTest+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772D4A927131FBA00DE4592 /* YoTest+UI.swift */; };
+		C772D4AB27131FBA00DE4592 /* YoTest+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772D4A927131FBA00DE4592 /* YoTest+UI.swift */; };
 		C793F4822701C46E00DF7F99 /* Capture.docc in Sources */ = {isa = PBXBuildFile; fileRef = C793F4812701C46E00DF7F99 /* Capture.docc */; };
 		C793F4832701C46E00DF7F99 /* Capture.h in Headers */ = {isa = PBXBuildFile; fileRef = C793F4802701C46E00DF7F99 /* Capture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C793F48B2701C4F600DF7F99 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793F48A2701C4F600DF7F99 /* Bridge.swift */; };
@@ -46,6 +48,7 @@
 		C764C9402703200200A63FBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C764C9432703200200A63FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C764C9452703200200A63FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C772D4A927131FBA00DE4592 /* YoTest+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YoTest+UI.swift"; sourceTree = "<group>"; };
 		C793F47D2701C46E00DF7F99 /* Capture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Capture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793F4802701C46E00DF7F99 /* Capture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
 		C793F4812701C46E00DF7F99 /* Capture.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Capture.docc; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 				C793F4892701C4DA00DF7F99 /* Bridge */,
 				C793F4802701C46E00DF7F99 /* Capture.h */,
 				C764C9282702CAF500A63FBE /* YoTest.swift */,
+				C772D4A927131FBA00DE4592 /* YoTest+UI.swift */,
 				C793F4812701C46E00DF7F99 /* Capture.docc */,
 				C713606E270FF06E00E2540B /* README.md */,
 			);
@@ -284,6 +288,7 @@
 				C7A5A32027044AB800CE25B4 /* Log.swift in Sources */,
 				C764C93827031FFE00A63FBE /* AppDelegate.swift in Sources */,
 				C7A5A32227044AC000CE25B4 /* Bridge.swift in Sources */,
+				C772D4AB27131FBA00DE4592 /* YoTest+UI.swift in Sources */,
 				C7A5A32127044AB800CE25B4 /* Modelable.swift in Sources */,
 				C764C93A27031FFE00A63FBE /* SceneDelegate.swift in Sources */,
 				C7FA6B7927086EE1005FCBDE /* Responder.swift in Sources */,
@@ -298,6 +303,7 @@
 				C764C9292702CAF500A63FBE /* YoTest.swift in Sources */,
 				C793F48B2701C4F600DF7F99 /* Bridge.swift in Sources */,
 				C7FA6B7827086EE1005FCBDE /* Responder.swift in Sources */,
+				C772D4AA27131FBA00DE4592 /* YoTest+UI.swift in Sources */,
 				C764C92E2702F37200A63FBE /* Log.swift in Sources */,
 				C793F4822701C46E00DF7F99 /* Capture.docc in Sources */,
 				C764C92C2702D90A00A63FBE /* Modelable.swift in Sources */,
@@ -540,7 +546,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				MODULEMAP_PRIVATE_FILE = Cpature/X/X.private.modulemap;
+				MODULEMAP_PRIVATE_FILE = Capture/X/X.private.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Capture;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -575,7 +581,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				MODULEMAP_PRIVATE_FILE = Cpature/X/X.private.modulemap;
+				MODULEMAP_PRIVATE_FILE = Capture/X/X.private.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Capture;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

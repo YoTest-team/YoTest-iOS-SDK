@@ -14,6 +14,8 @@ public protocol YoTestDelegate: AnyObject {
     func onReady(args: [String: Any]) -> Void
     /// 验证码验证成功时回调
     func onSuccess(args: [String: Any]) -> Void
+    /// 显示验证码时回调
+    func onShow(args: [String: Any]) -> Void
     /// 验证码验证失败时回调
     func onError(args: [String: Any]) -> Void
     /// 关闭验证码
@@ -253,8 +255,21 @@ public final class YoTest: NSObject {
         let code: Code
     }
     
+    /// loading 下的蒙层
+    var mask: UIButton?
+    /// loading
+    var loading: UIImageView?
+    
     /// 回调代理
-    public weak var delegate: YoTestDelegate?
+    public weak var delegate: YoTestDelegate? {
+        get {
+            return pass.delegate
+        }
+        set {
+            pass.delegate = newValue
+        }
+    }
+    let pass = Pass()
     let bridge: JS.DispatchBridge
     
     /// 初始化 YoTest 实例。注意，只能在主线程调用初始化方法
@@ -268,18 +283,20 @@ public final class YoTest: NSObject {
             throw YTError(code: .unavailable)
         }
         
-        self.delegate = delegate
+        pass.delegate = delegate
         bridge = JS.DispatchBridge(webview: YoTest.webview,
                                    bridger: "YoTestCapture")
         
         // add responders
-        bridge.add(JS: Responder.Ready(delegate))
-        bridge.add(JS: Responder.Success(delegate))
-        bridge.add(JS: Responder.Error(delegate))
-        bridge.add(JS: Responder.Close(delegate))
+        bridge.add(JS: Responder.Ready(pass))
+        bridge.add(JS: Responder.Success(pass))
+        bridge.add(JS: Responder.Show(pass))
+        bridge.add(JS: Responder.Error(pass))
+        bridge.add(JS: Responder.Close(pass))
         
         super.init()
         YoTest.webview.navigationDelegate = self
+        pass.host = self
     }
     
     /// 调起验证码界面。注意，只能在主线程调用此方法
@@ -294,17 +311,26 @@ public final class YoTest: NSObject {
             wurl = "https:" + wurl
         }
         guard let url = URL(string: wurl) else { return }
-        
+
         let webview = YoTest.webview
         webview.removeFromSuperview()
         webview.frame = YoTest.keyWindow.bounds
         YoTest.keyWindow.addSubview(webview)
         webview.load(URLRequest(url: url))
+        
+        showLoading()
     }
     
     /// 关闭验证码页面
-    func close() {
-        YoTest.webview.removeFromSuperview()
+    public func close() {
+        YoTest.back_webview?.stopLoading()
+        YoTest.back_webview?.removeFromSuperview()
+    }
+    
+    /// 取消验证
+    func cancel() {
+        close()
+        hideLoading()
     }
     
     deinit {

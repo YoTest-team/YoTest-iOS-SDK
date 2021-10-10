@@ -12,7 +12,7 @@ rm -r -f Build/*
 scheme="Capture"
 
 xcodebuild archive \
-  -project MCGraphics/MCGraphics.xcodeproj \
+  -project Capture.xcodeproj \
   -scheme $scheme \
   -destination "generic/platform=iOS" \
   -archivePath Archive/$scheme-iOS \
@@ -23,8 +23,8 @@ xcodebuild archive \
 scheme="Capture"
 
 xcodebuild archive \
-  -project MCGraphics/MCGraphics.xcodeproj \
-  -scheme $scheme-Simulator \
+  -project Capture.xcodeproj \
+  -scheme $scheme \
   -destination "generic/platform=iOS Simulator" \
   -archivePath Archive/$scheme-iOS-Simulator \
   VALID_ARCHS="x86_64" \
