@@ -1,6 +1,6 @@
 //
 //  YoTest.swift
-//  Capture
+//  Captcha
 //
 //  Created by zwh on 2021/9/28.
 //
@@ -288,7 +288,7 @@ public final class YoTest: NSObject {
         
         pass.delegate = delegate
         bridge = JS.DispatchBridge(webview: YoTest.webview,
-                                   bridger: "YoTestCapture")
+                                   bridger: "YoTestCaptcha")
         
         // add responders
         bridge.add(JS: Responder.Ready(pass))

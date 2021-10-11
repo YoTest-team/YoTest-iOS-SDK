@@ -95,7 +95,7 @@ private func logA(flag: String,
         return
     }
     let fileName = file.components(separatedBy: "/").last!
-    print("\(now()) [YoTestCapture] \(flag): \(fileName) \(method) - \(line): ", items,
+    print("\(now()) [YoTestCaptcha] \(flag): \(fileName) \(method) - \(line): ", items,
           separator: separator,
           terminator: terminator)
 }

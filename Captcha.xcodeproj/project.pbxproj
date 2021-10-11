@@ -22,8 +22,8 @@
 		C764C9492703200C00A63FBE /* YoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C9282702CAF500A63FBE /* YoTest.swift */; };
 		C772D4AA27131FBA00DE4592 /* YoTest+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772D4A927131FBA00DE4592 /* YoTest+UI.swift */; };
 		C772D4AB27131FBA00DE4592 /* YoTest+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C772D4A927131FBA00DE4592 /* YoTest+UI.swift */; };
-		C793F4822701C46E00DF7F99 /* Capture.docc in Sources */ = {isa = PBXBuildFile; fileRef = C793F4812701C46E00DF7F99 /* Capture.docc */; };
-		C793F4832701C46E00DF7F99 /* Capture.h in Headers */ = {isa = PBXBuildFile; fileRef = C793F4802701C46E00DF7F99 /* Capture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C793F4822701C46E00DF7F99 /* Captcha.docc in Sources */ = {isa = PBXBuildFile; fileRef = C793F4812701C46E00DF7F99 /* Captcha.docc */; };
+		C793F4832701C46E00DF7F99 /* Captcha.h in Headers */ = {isa = PBXBuildFile; fileRef = C793F4802701C46E00DF7F99 /* Captcha.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C793F48B2701C4F600DF7F99 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793F48A2701C4F600DF7F99 /* Bridge.swift */; };
 		C7A5A31F27044AB800CE25B4 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C92F27031FE100A63FBE /* Window.swift */; };
 		C7A5A32027044AB800CE25B4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C92D2702F37200A63FBE /* Log.swift */; };
@@ -50,8 +50,8 @@
 		C764C9452703200200A63FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C772D4A927131FBA00DE4592 /* YoTest+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YoTest+UI.swift"; sourceTree = "<group>"; };
 		C793F47D2701C46E00DF7F99 /* YoTestSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YoTestSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C793F4802701C46E00DF7F99 /* Capture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
-		C793F4812701C46E00DF7F99 /* Capture.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Capture.docc; sourceTree = "<group>"; };
+		C793F4802701C46E00DF7F99 /* Captcha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Captcha.h; sourceTree = "<group>"; };
+		C793F4812701C46E00DF7F99 /* Captcha.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Captcha.docc; sourceTree = "<group>"; };
 		C793F48A2701C4F600DF7F99 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		C7A5A32D2704765A00CE25B4 /* X.private.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = X.private.modulemap; sourceTree = "<group>"; };
 		C7A5A32F2704765A00CE25B4 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		C793F4732701C46E00DF7F99 = {
 			isa = PBXGroup;
 			children = (
-				C793F47F2701C46E00DF7F99 /* Capture */,
+				C793F47F2701C46E00DF7F99 /* Captcha */,
 				C764C93627031FFE00A63FBE /* Demo */,
 				C793F47E2701C46E00DF7F99 /* Products */,
 			);
@@ -126,20 +126,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C793F47F2701C46E00DF7F99 /* Capture */ = {
+		C793F47F2701C46E00DF7F99 /* Captcha */ = {
 			isa = PBXGroup;
 			children = (
 				C713606F270FF3DC00E2540B /* Res */,
 				C7A5A32C2704765900CE25B4 /* X */,
 				C764C92A2702D90A00A63FBE /* Utils */,
 				C793F4892701C4DA00DF7F99 /* Bridge */,
-				C793F4802701C46E00DF7F99 /* Capture.h */,
+				C793F4802701C46E00DF7F99 /* Captcha.h */,
 				C764C9282702CAF500A63FBE /* YoTest.swift */,
 				C772D4A927131FBA00DE4592 /* YoTest+UI.swift */,
-				C793F4812701C46E00DF7F99 /* Capture.docc */,
+				C793F4812701C46E00DF7F99 /* Captcha.docc */,
 				C713606E270FF06E00E2540B /* README.md */,
 			);
-			path = Capture;
+			path = Captcha;
 			sourceTree = "<group>";
 		};
 		C793F4892701C4DA00DF7F99 /* Bridge */ = {
@@ -175,7 +175,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C793F4832701C46E00DF7F99 /* Capture.h in Headers */,
+				C793F4832701C46E00DF7F99 /* Captcha.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +237,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C793F4772701C46E00DF7F99 /* Build configuration list for PBXProject "Capture" */;
+			buildConfigurationList = C793F4772701C46E00DF7F99 /* Build configuration list for PBXProject "Captcha" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -305,7 +305,7 @@
 				C7FA6B7827086EE1005FCBDE /* Responder.swift in Sources */,
 				C772D4AA27131FBA00DE4592 /* YoTest+UI.swift in Sources */,
 				C764C92E2702F37200A63FBE /* Log.swift in Sources */,
-				C793F4822701C46E00DF7F99 /* Capture.docc in Sources */,
+				C793F4822701C46E00DF7F99 /* Captcha.docc in Sources */,
 				C764C92C2702D90A00A63FBE /* Modelable.swift in Sources */,
 				C764C93027031FE100A63FBE /* Window.swift in Sources */,
 			);
@@ -361,7 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Capture/X\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X\"";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -396,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Capture/X\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X\"";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -536,7 +536,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
 				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = Capture/Info.plist;
+				INFOPLIST_FILE = Captcha/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -546,13 +546,13 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				MODULEMAP_PRIVATE_FILE = Capture/X/X.private.modulemap;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Capture;
+				MODULEMAP_PRIVATE_FILE = Captcha/X/X.private.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Captcha;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Capture/X/XPrivate\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X/XPrivate\"";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,7 +571,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
 				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = Capture/Info.plist;
+				INFOPLIST_FILE = Captcha/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -581,13 +581,13 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				MODULEMAP_PRIVATE_FILE = Capture/X/X.private.modulemap;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Capture;
+				MODULEMAP_PRIVATE_FILE = Captcha/X/X.private.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yotest.Captcha;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Capture/X/XPrivate\"";
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X/XPrivate\"";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -605,7 +605,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C793F4772701C46E00DF7F99 /* Build configuration list for PBXProject "Capture" */ = {
+		C793F4772701C46E00DF7F99 /* Build configuration list for PBXProject "Captcha" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C793F4842701C46E00DF7F99 /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  Bridge.swift
-//  Capture
+//  Captcha
 //
 //  Created by zwh on 2021/9/27.
 //

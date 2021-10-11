@@ -1,6 +1,6 @@
 //
 //  YoTest+UI.swift
-//  Capture
+//  Captcha
 //
 //  Created by zwh on 2021/10/10.
 //
