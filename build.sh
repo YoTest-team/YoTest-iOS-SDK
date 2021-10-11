@@ -14,7 +14,7 @@ rm -r -f Product/*
 scheme="YoTestSDK"
 
 xcodebuild archive \
-  -project Capture.xcodeproj \
+  -project Captcha.xcodeproj \
   -scheme $scheme \
   -destination "generic/platform=iOS" \
   -archivePath Archive/$scheme-iOS \
@@ -23,7 +23,7 @@ xcodebuild archive \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 xcodebuild archive \
-  -project Capture.xcodeproj \
+  -project Captcha.xcodeproj \
   -scheme $scheme \
   -destination "generic/platform=iOS Simulator" \
   -archivePath Archive/$scheme-iOS-Simulator \

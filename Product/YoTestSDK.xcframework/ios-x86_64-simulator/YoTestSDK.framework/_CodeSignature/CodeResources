@@ -4,9 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/Capture.h</key>
+		<key>Headers/Captcha.h</key>
 		<data>
-		QqQXUton2gywKihN5g2dkgM0AOE=
+		68YdEj4Rv2csvESRO9nVyCWiEmE=
 		</data>
 		<key>Headers/YoTestSDK-Swift.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PyXfgShYT37GgXN9Yc7HVambgNo=
+		DEvCYWDsZvQU20D3ppHf7TM+YnY=
 		</data>
 		<key>Loading.bundle/000.png</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FAshL03jrZ6j/HBq65vXXpKLY5k=
+		8DkYZqqRK7Qix8Xshh1b6EHPzfM=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		FAshL03jrZ6j/HBq65vXXpKLY5k=
+		8DkYZqqRK7Qix8Xshh1b6EHPzfM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -151,15 +151,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/Capture.h</key>
+		<key>Headers/Captcha.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QqQXUton2gywKihN5g2dkgM0AOE=
+			68YdEj4Rv2csvESRO9nVyCWiEmE=
 			</data>
 			<key>hash2</key>
 			<data>
-			8Q9mfE2XGmWApupyHUWAH8x9dtpB1OB//4TTajGzZH4=
+			9+zxcF5AI7fK3wHCc/rtXAHqaFzzLm4dSCv+Wq/mqgg=
 			</data>
 		</dict>
 		<key>Headers/YoTestSDK-Swift.h</key>
@@ -463,11 +463,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FAshL03jrZ6j/HBq65vXXpKLY5k=
+			8DkYZqqRK7Qix8Xshh1b6EHPzfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			OPrn4GRrzPrN8TYArZhqKKK7UMCjHDdQM8GbBT41F3Y=
+			MFz/vemu/LWEFxY0pVgbG46Z8uvs34soZzxe/wtFunA=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -496,11 +496,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FAshL03jrZ6j/HBq65vXXpKLY5k=
+			8DkYZqqRK7Qix8Xshh1b6EHPzfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			OPrn4GRrzPrN8TYArZhqKKK7UMCjHDdQM8GbBT41F3Y=
+			MFz/vemu/LWEFxY0pVgbG46Z8uvs34soZzxe/wtFunA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
