@@ -49,7 +49,7 @@
 		C764C9432703200200A63FBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C764C9452703200200A63FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C772D4A927131FBA00DE4592 /* YoTest+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YoTest+UI.swift"; sourceTree = "<group>"; };
-		C793F47D2701C46E00DF7F99 /* Capture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Capture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C793F47D2701C46E00DF7F99 /* YoTestSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YoTestSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C793F4802701C46E00DF7F99 /* Capture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
 		C793F4812701C46E00DF7F99 /* Capture.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Capture.docc; sourceTree = "<group>"; };
 		C793F48A2701C4F600DF7F99 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		C793F47E2701C46E00DF7F99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C793F47D2701C46E00DF7F99 /* Capture.framework */,
+				C793F47D2701C46E00DF7F99 /* YoTestSDK.framework */,
 				C764C93527031FFE00A63FBE /* Demo.app */,
 			);
 			name = Products;
@@ -199,9 +199,9 @@
 			productReference = C764C93527031FFE00A63FBE /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C793F47C2701C46E00DF7F99 /* Capture */ = {
+		C793F47C2701C46E00DF7F99 /* YoTestSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C793F4862701C46E00DF7F99 /* Build configuration list for PBXNativeTarget "Capture" */;
+			buildConfigurationList = C793F4862701C46E00DF7F99 /* Build configuration list for PBXNativeTarget "YoTestSDK" */;
 			buildPhases = (
 				C793F4782701C46E00DF7F99 /* Headers */,
 				C793F4792701C46E00DF7F99 /* Sources */,
@@ -212,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = Capture;
+			name = YoTestSDK;
 			productName = Capture;
-			productReference = C793F47D2701C46E00DF7F99 /* Capture.framework */;
+			productReference = C793F47D2701C46E00DF7F99 /* YoTestSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C793F47C2701C46E00DF7F99 /* Capture */,
+				C793F47C2701C46E00DF7F99 /* YoTestSDK */,
 				C764C93427031FFE00A63FBE /* Demo */,
 			);
 		};
@@ -614,7 +614,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C793F4862701C46E00DF7F99 /* Build configuration list for PBXNativeTarget "Capture" */ = {
+		C793F4862701C46E00DF7F99 /* Build configuration list for PBXNativeTarget "YoTestSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C793F4872701C46E00DF7F99 /* Debug */,

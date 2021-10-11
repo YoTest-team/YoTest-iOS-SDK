@@ -1,0 +1,4 @@
+framework module YoTestSDK {
+  header "YoTestSDK-Swift.h"
+  requires objc
+}

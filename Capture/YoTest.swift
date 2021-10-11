@@ -30,6 +30,9 @@ public final class YoTest: NSObject {
     public struct Auth {
         /// 验证码服务 ID
         var accessId: String
+        public init(accessId: String) {
+            self.accessId = accessId
+        }
     }
     
     /// 鉴权结果
@@ -252,7 +255,7 @@ public final class YoTest: NSObject {
         }
         
         /// 错误码
-        let code: Code
+        public let code: Code
     }
     
     /// loading 下的蒙层

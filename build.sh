@@ -5,11 +5,13 @@ cd $DIR
 
 mkdir -p Archive/
 mkdir -p Build/
+mkdir -p Product/
 
 rm -r -f Archive/*
 rm -r -f Build/*
+rm -r -f Product/*
 
-scheme="Capture"
+scheme="YoTestSDK"
 
 xcodebuild archive \
   -project Capture.xcodeproj \
@@ -20,8 +22,6 @@ xcodebuild archive \
   SKIP_INSTALL=NO \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-scheme="Capture"
-
 xcodebuild archive \
   -project Capture.xcodeproj \
   -scheme $scheme \
@@ -31,10 +31,11 @@ xcodebuild archive \
   SKIP_INSTALL=NO \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-
 output_name="YoTestSDK"
 
 xcodebuild -create-xcframework \
   -framework Archive/$scheme-iOS.xcarchive/Products/Library/Frameworks/$scheme.framework \
   -framework Archive/$scheme-iOS-Simulator.xcarchive/Products/Library/Frameworks/$scheme.framework \
   -output Build/$output_name.xcframework
+
+cp -r -p Build/$output_name.xcframework Product/$output_name.xcframework
