@@ -147,7 +147,7 @@ class JS {
                   let responder = responders[action] else { return }
             
             let args: [String: Any]
-            if let x: [String: Any] = cast(data) {
+            if let x: [String: Any] = cast(data[JS.data]) {
                 args = x
             } else {
                 args = [String: Any]()

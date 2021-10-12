@@ -231,6 +231,9 @@ public final class YoTest: NSObject {
     let pass = Pass()
     let bridge: JS.DispatchBridge
     
+    public var autoShowLoading: Bool = true
+    public var autoShowToast: Bool = true
+    
     public init(with delegate: YoTestDelegate?) throws {
         guard Thread.isMainThread else { fatalError("只能在主线程调用") }
         guard !YoTest.requesting else {
@@ -266,22 +269,31 @@ public final class YoTest: NSObject {
             wurl = "https:" + wurl
         }
         guard let url = URL(string: wurl) else { return }
-
+        
+        let mask = UIView()
+        mask.backgroundColor = .black.withAlphaComponent(0.3)
+        mask.frame = YoTest.keyWindow.bounds
+        mask.isHidden = true
+        YoTest.keyWindow.addSubview(mask)
+        
         let webview = YoTest.webview
         webview.removeFromSuperview()
         webview.frame = YoTest.keyWindow.bounds
-        YoTest.keyWindow.addSubview(webview)
+        mask.addSubview(webview)
         webview.load(URLRequest(url: url))
         
-        showLoading()
+        if autoShowLoading {
+            showLoading()
+        }
     }
     
     public func close() {
         YoTest.back_webview?.stopLoading()
+        YoTest.back_webview?.superview?.removeFromSuperview()
         YoTest.back_webview?.removeFromSuperview()
     }
     
-    func cancel() {
+    public func cancel() {
         close()
         hideLoading()
     }

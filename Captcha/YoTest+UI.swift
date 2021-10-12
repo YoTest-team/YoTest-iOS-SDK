@@ -28,7 +28,7 @@ extension YoTest {
                                        toItem: nil,
                                        attribute: .notAnAttribute,
                                        multiplier: 0,
-                                       constant: 100)
+                                       constant: 70)
         width.isActive = true
         
         let height = NSLayoutConstraint(item: loading,
@@ -37,7 +37,7 @@ extension YoTest {
                                         toItem: nil,
                                         attribute: .notAnAttribute,
                                         multiplier: 0,
-                                        constant: 100)
+                                        constant: 70)
         height.isActive = true
         
         YoTest.keyWindow.addSubview(loading)
@@ -92,8 +92,11 @@ extension YoTest {
                       hide after: TimeInterval = 2) {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = .white.withAlphaComponent(0.9)
-        background.layer.cornerRadius = 10
+        background.backgroundColor = .init(red: 0.94,
+                                           green: 0.94,
+                                           blue: 0.94,
+                                           alpha: 0.9)
+        background.layer.cornerRadius = 20
         background.layer.masksToBounds = true
         YoTest.keyWindow.addSubview(background)
         
@@ -105,7 +108,7 @@ extension YoTest {
                            multiplier: 1,
                            constant: 0).isActive = true
         
-        var bottom: Float = -30;
+        var bottom: CGFloat = -30;
         if #available(iOS 11.0, *) {
             if YoTest.keyWindow.safeAreaInsets.top > 0 {
                 bottom -= 34
@@ -117,13 +120,12 @@ extension YoTest {
                            toItem: background.superview!,
                            attribute: .bottom,
                            multiplier: 1,
-                           constant: UIScreen.main.bounds.height).isActive = true
+                           constant: bottom).isActive = true
         
         let label = UILabel()
         background.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.backgroundColor = .black.withAlphaComponent(0.3)
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
@@ -140,7 +142,7 @@ extension YoTest {
                            toItem: label.superview!,
                            attribute: .top,
                            multiplier: 1,
-                           constant: 20).isActive = true
+                           constant: 15).isActive = true
         
         NSLayoutConstraint(item: label,
                            attribute: .left,
@@ -148,7 +150,7 @@ extension YoTest {
                            toItem: label.superview!,
                            attribute: .left,
                            multiplier: 1,
-                           constant: 20).isActive = true
+                           constant: 25).isActive = true
         
         NSLayoutConstraint(item: label,
                            attribute: .bottom,
@@ -156,7 +158,7 @@ extension YoTest {
                            toItem: label.superview!,
                            attribute: .bottom,
                            multiplier: 1,
-                           constant: -20).isActive = true
+                           constant: -15).isActive = true
         
         NSLayoutConstraint(item: label,
                            attribute: .right,
@@ -164,7 +166,7 @@ extension YoTest {
                            toItem: label.superview!,
                            attribute: .right,
                            multiplier: 1,
-                           constant: -20).isActive = true
+                           constant: -25).isActive = true
         
         NSLayoutConstraint(item: label,
                            attribute: .width,
@@ -192,12 +194,17 @@ extension YoTest {
         
         func onSuccess(args: [String : Any]) {
             host?.hideLoading()
-            YoTest.toast(message: "已通过友验智能验证")
+            let show = host?.autoShowToast ?? false
+            if show {
+                YoTest.toast(message: "已通过友验智能验证")
+            }
+            
             delegate?.onSuccess(args: args)
         }
         
         func onShow(args: [String : Any]) {
             host?.hideLoading()
+            YoTest.webview.superview?.isHidden = false
             delegate?.onShow(args: args)
         }
         
