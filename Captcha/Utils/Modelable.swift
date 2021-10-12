@@ -1,10 +1,3 @@
-//
-//  Modelable.swift
-//  MCGraphics
-//
-//  Created by zwh on 2020/12/17.
-//
-
 import Foundation
 
 fileprivate extension String {
@@ -22,7 +15,6 @@ fileprivate extension String {
             return NSNumber(false)
         }
         
-        // hex number
         var sign: Int64 = 0
         var hex = trimed
         if trimed.hasPrefix("0x") {
@@ -42,7 +34,6 @@ fileprivate extension String {
             }
         }
         
-        // normal number
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         return formatter.number(from: trimed)

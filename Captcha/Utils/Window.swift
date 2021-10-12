@@ -1,10 +1,3 @@
-//
-//  Window.swift
-//  Captcha
-//
-//  Created by zwh on 2021/9/28.
-//
-
 import Foundation
 import UIKit
 

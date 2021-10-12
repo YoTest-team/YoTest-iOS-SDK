@@ -1,22 +1,11 @@
-//
-//  Log.swift
-//  MCGraphics
-//
-//  Created by zwh on 2020/12/29.
-//
-
 import Foundation
 
 extension YoTest {
     public final class Log {
         public enum Level: Int {
-            /// 无日志
             case none = 0
-            /// 打印 info 级别的日志
             case info = 1
-            /// 打印 error 级别的日志
             case error = 2
-            /// 输出所有日志
             case verbose = 3
         }
     }

@@ -1,22 +1,13 @@
-//
-//  YoTest+UI.swift
-//  Captcha
-//
-//  Created by zwh on 2021/10/10.
-//
-
 import Foundation
 import UIKit
 
 extension YoTest {
     
-    /// 点击蒙层
     @objc func click() {
         cancel()
         pass.onClose(args: .init())
     }
     
-    /// 显示 loading
     func showLoading() {
         guard loading == nil, mask == nil else { return }
         
@@ -88,7 +79,6 @@ extension YoTest {
         self.loading = loading
     }
     
-    /// 隐藏 loading
     func hideLoading() {
         guard let loading = loading, let mask = mask else { return }
         loading.stopAnimating()
@@ -98,15 +88,11 @@ extension YoTest {
         self.loading = nil
     }
     
-    /// 弹吐司提示
-    /// - Parameters:
-    ///   - message: 提示信息
-    ///   - after: 多长时间后隐藏
     static func toast(message: String,
                       hide after: TimeInterval = 2) {
         let background = UIView()
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = .black.withAlphaComponent(0.8)
+        background.backgroundColor = .white.withAlphaComponent(0.9)
         background.layer.cornerRadius = 10
         background.layer.masksToBounds = true
         YoTest.keyWindow.addSubview(background)
@@ -119,18 +105,24 @@ extension YoTest {
                            multiplier: 1,
                            constant: 0).isActive = true
         
+        var bottom: Float = -30;
+        if #available(iOS 11.0, *) {
+            if YoTest.keyWindow.safeAreaInsets.top > 0 {
+                bottom -= 34
+            }
+        }
         NSLayoutConstraint(item: background,
-                           attribute: .centerY,
+                           attribute: .bottom,
                            relatedBy: .equal,
                            toItem: background.superview!,
-                           attribute: .centerY,
+                           attribute: .bottom,
                            multiplier: 1,
-                           constant: 0).isActive = true
+                           constant: UIScreen.main.bounds.height).isActive = true
         
         let label = UILabel()
         background.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = .black
         label.backgroundColor = .black.withAlphaComponent(0.3)
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 16)
@@ -191,7 +183,6 @@ extension YoTest {
         }
     }
     
-    /// 回调代理透传，某些代理事件需要先处理一些事情
     class Pass: NSObject, YoTestDelegate {
         weak var host: YoTest?
         weak var delegate: YoTestDelegate?

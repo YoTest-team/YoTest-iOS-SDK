@@ -7,31 +7,27 @@
 
 import UIKit
 
-//fileprivate let link = "https://download-qn.okchang.com/wesingcache/001vMHwZ1kXRCx/4e5b4b6fe5a7c94f064ac88df1eb4983_new.txt"
 class ViewController: UIViewController, YoTestDelegate {
     var captcha: YoTest?
+    
+    @IBOutlet weak var login: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        YoTest.logLevel = .verbose
+        login.layer.masksToBounds = true
+        login.layer.cornerRadius = 10
     }
-
-    @IBAction func regist() {
-        YoTest.registSDK(auth: .init(accessId: "4297f44b13955235245b2497399d7a93")) { success in
-            print("success: \(success)")
+    
+    @IBAction func verify() {
+        if captcha == nil {
             do {
-                self.captcha = try YoTest(with: self)
+                captcha = try YoTest(with: self)
             } catch {
                 print("error: \(error)")
             }
         }
-    }
-    
-    @IBAction func verify() {
         captcha?.verify()
-//        YoTest.toast(message: "已通过友验智能验证",
-//                     hide: 2)
     }
     
     func onSuccess(args: [String : Any]) {
@@ -49,7 +45,6 @@ class ViewController: UIViewController, YoTestDelegate {
     func onClose(args: [String : Any]) {
         print("onClose args: \(args)")
         captcha?.close()
-//        YoTest.destroy()
     }
     
     func onError(args: [String : Any]) {

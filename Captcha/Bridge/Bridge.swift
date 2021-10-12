@@ -1,33 +1,17 @@
-//
-//  Bridge.swift
-//  Captcha
-//
-//  Created by zwh on 2021/9/27.
-//
-
 import Foundation
 import JavaScriptCore
 import WebKit
 
-/// JS 调用原生
 protocol JS2Native: JSExport {
-    /// JS 调用原生统一入口
-    /// - Parameter json: 调用参数的 JSON 字典
     func call(json: String) -> Void
 }
 
-/// 原生调用 JS
 protocol Native2JS {
-    /// 原生调用 JS
-    /// - Parameter method: JS 方法名
-    /// - Parameter args: JS 方法参数
     func callback(to method: String,
                   args: [String: Any]) -> Void
 }
 
 protocol JSResponder {
-    /// 接收到 JS 调用
-    /// - Parameter data: 参数 JSON 字典
     func receiveJSCall(data: [String: Any]) -> Void
     
     var action: String { get }
@@ -43,16 +27,10 @@ class JS {
         
         private let JSEntrance = "call"
         
-        /// 调用者名称
         private(set) var bridger: String
-        /// WKWebView
         private(set) weak var webview: WKWebView?
-        /// 是否注入成功
         var injectionSucceed: Bool = false
         
-        /// 初始化
-        /// - Parameter webview: WKWebView
-        /// - Parameter bridger: 调用者名称
         init(webview: WKWebView,
              bridger: String) {
             self.webview = webview
@@ -61,21 +39,18 @@ class JS {
             injectJavaScript()
         }
         
-        /// 不再使用时调用, NS_REQUIRES_SUPER
         func stop() {
             guard let webview = webview else { return }
             webview.configuration.userContentController.removeScriptMessageHandler(forName: JSEntrance)
         }
         
-        /// For subclass hook. NS_REQUIRES_SUPER
         func injectJavaScript() {
             guard let webview = webview else { return }
             webview.configuration.userContentController = .init()
             webview.configuration.userContentController.removeScriptMessageHandler(forName: JSEntrance)
             webview.configuration.userContentController.add(self, name: JSEntrance)
         }
-        
-        /// Subclass should implement
+
         func call(json: String) { }
         
         func callback(to method: String,

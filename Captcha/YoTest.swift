@@ -1,41 +1,24 @@
-//
-//  YoTest.swift
-//  Captcha
-//
-//  Created by zwh on 2021/9/28.
-//
-
 import Foundation
 import WebKit
 
-/// 友验回调代理
 public protocol YoTestDelegate: AnyObject {
-    /// 验证码准备完成时回调
     func onReady(args: [String: Any]) -> Void
-    /// 验证码验证成功时回调
     func onSuccess(args: [String: Any]) -> Void
-    /// 显示验证码时回调
     func onShow(args: [String: Any]) -> Void
-    /// 验证码验证失败时回调
     func onError(args: [String: Any]) -> Void
-    /// 关闭验证码
     func onClose(args: [String: Any]) -> Void
 }
 
-/// 友验
 public final class YoTest: NSObject {
     
     static let authorizeURL = "https://api.fastyotest.com/api/init"
-    /// SDK 鉴权参数
     public struct Auth {
-        /// 验证码服务 ID
         var accessId: String
         public init(accessId: String) {
             self.accessId = accessId
         }
     }
     
-    /// 鉴权结果
     class AuthResult {
         let binary: String
         let lib: String
@@ -59,21 +42,15 @@ public final class YoTest: NSObject {
         }
     }
     
-    /// 鉴权参数
     static var authorize = Auth(accessId: "")
-    /// 是否可用
     static var available = false
-    /// 是否正在请求
     static var requesting = false
-    /// 鉴权结果
     static var authResult: AuthResult? = nil
     
-    /// 日志等级。
     public static var logLevel: Log.Level = .none
     
     static var back_webview: WKWebView? = nil
     
-    /// 网页
     static var webview: WKWebView = {
         if let webview = back_webview {
             return webview
@@ -87,10 +64,6 @@ public final class YoTest: NSObject {
         return back_webview!
     }()
     
-    /// 注册友验 SDK
-    /// - Parameters:
-    ///   - auth: 鉴权参数
-    ///   - result: 鉴权结果
     public static func registSDK(auth token: Auth,
                                  on result: @escaping (Bool) -> Void) {
         guard !requesting else {
@@ -130,18 +103,12 @@ public final class YoTest: NSObject {
         }
     }
     
-    /// 配置 webview
     static func setup(ua: String) {
         guard let result = authResult else { return }
         result.userAgent = "\(ua) YoTest_iOS/\(result.version)"
         webview.customUserAgent = result.userAgent
     }
     
-    /// 鉴权请求
-    /// - Parameters:
-    ///   - url: 鉴权 URL
-    ///   - times: 尝试次数
-    ///   - result: 鉴权结果
     static func auth(url: URL,
                      try times: Int,
                      on result: @escaping (Bool) -> Void) {
@@ -157,7 +124,6 @@ public final class YoTest: NSObject {
         request.httpMethod = "GET"
         request.timeoutInterval = 10
         session.dataTask(with: request) { data, response, error in
-            // error
             if let error = error {
                 logE("鉴权失败: \(error)")
                 if times - 1 > 0 {
@@ -170,7 +136,6 @@ public final class YoTest: NSObject {
                 return
             }
             
-            // response
             guard let _ = response as? HTTPURLResponse,
                   let data = data else {
                       logE("鉴权失败: \(String(describing: response))")
@@ -239,31 +204,22 @@ public final class YoTest: NSObject {
         }.resume()
     }
     
-    /// 当不再使用 YoTest 时，可调用 destroy 方法来回收部分内存
     static public func destroy() {
         YoTest.back_webview = nil
     }
     
-    /// 错误
     public struct YTError: Error {
-        /// 错误码
         public enum Code {
-            /// 请求中
             case requesting
-            /// 不可用
             case unavailable
         }
         
-        /// 错误码
         public let code: Code
     }
     
-    /// loading 下的蒙层
     var mask: UIButton?
-    /// loading
     var loading: UIImageView?
     
-    /// 回调代理
     public weak var delegate: YoTestDelegate? {
         get {
             return pass.delegate
@@ -275,8 +231,6 @@ public final class YoTest: NSObject {
     let pass = Pass()
     let bridge: JS.DispatchBridge
     
-    /// 初始化 YoTest 实例。注意，只能在主线程调用初始化方法
-    /// - Parameter delegate: 回调代理
     public init(with delegate: YoTestDelegate?) throws {
         guard Thread.isMainThread else { fatalError("只能在主线程调用") }
         guard !YoTest.requesting else {
@@ -290,7 +244,6 @@ public final class YoTest: NSObject {
         bridge = JS.DispatchBridge(webview: YoTest.webview,
                                    bridger: "YoTestCaptcha")
         
-        // add responders
         bridge.add(JS: Responder.Ready(pass))
         bridge.add(JS: Responder.Success(pass))
         bridge.add(JS: Responder.Show(pass))
@@ -302,7 +255,6 @@ public final class YoTest: NSObject {
         pass.host = self
     }
     
-    /// 调起验证码界面。注意，只能在主线程调用此方法
     public func verify() {
         guard Thread.isMainThread else { fatalError("只能在主线程调用") }
         guard let result = YoTest.authResult else {
@@ -324,13 +276,11 @@ public final class YoTest: NSObject {
         showLoading()
     }
     
-    /// 关闭验证码页面
     public func close() {
         YoTest.back_webview?.stopLoading()
         YoTest.back_webview?.removeFromSuperview()
     }
     
-    /// 取消验证
     func cancel() {
         close()
         hideLoading()

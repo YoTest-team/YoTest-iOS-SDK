@@ -1,10 +1,3 @@
-//
-//  Responder.swift
-//  Captcha
-//
-//  Created by zwh on 2021/10/2.
-//
-
 import Foundation
 
 final class Responder {

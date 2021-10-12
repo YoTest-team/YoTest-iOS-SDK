@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        YoTest.logLevel = .verbose
+        YoTest.registSDK(auth: .init(accessId: "4297f44b13955235245b2497399d7a93")) { success in
+            print("regist success: \(success)")
+        }
         return true
     }
 
