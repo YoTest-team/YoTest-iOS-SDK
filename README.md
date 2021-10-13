@@ -5,6 +5,7 @@ YoTest-iOS-SDK 文档
 
 * [仓库入口](https://github.com/YoTest-team/YoTest-iOS-SDK#%E4%BB%93%E5%BA%93%E5%85%A5%E5%8F%A3)
 * [兼容性](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%85%BC%E5%AE%B9%E6%80%A7)
+* [示例项目](https://github.com/YoTest-team/YoTest-iOS-SDK#%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE)
 * [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85)
 * [编译(自定义)](https://github.com/YoTest-team/YoTest-iOS-SDK#%E7%BC%96%E8%AF%91%E8%87%AA%E5%AE%9A%E4%B9%89)
 * [快速开始](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
@@ -18,6 +19,9 @@ YoTest-iOS-SDK 文档
 
 * iOS >= 9.0
 * Swift（若需要使用OC，可以自行添加桥接代码）
+
+### 示例项目
+你可以通过XCode 13+打开本项目进行示例项目的预览和更改，具体文件请[点击此处](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Demo)。
 
 ### 安装
 
