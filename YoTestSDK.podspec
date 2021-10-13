@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/YoTest-team/YoTest-iOS-SDK'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Darwel.Z' => 'x1aox1a45py@163.com' }
   s.source           = { :git => 'https://github.com/YoTest-team/YoTest-iOS-SDK.git', :tag => s.version.to_s }
 
