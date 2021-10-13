@@ -27,7 +27,7 @@ YoTest-iOS-SDK 文档
 
 #### 方法一，使用 [xcframework](https://github.com/bielikb/xcframeworks)（推荐）
 	
-下载最新 [Tag](https://github.com/bielikb/xcframeworks/releases)，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
+下载最新 Tag ，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
 	
 <img src="./Res/install.gif" alt="show" />
 
