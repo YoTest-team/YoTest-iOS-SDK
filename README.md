@@ -102,7 +102,7 @@ captcha?.verify()
 
 YoTest类：
 
-* [public static func registSDK(auth:, on:)](#registSDK)
+* [public static func registSDK(auth, on)](#registSDK)
 * [public static func destroy()](#destroy)
 * [public init(with:) throws](#YoTest.init)
 * [public func verify()](#verify)
