@@ -40,9 +40,9 @@ YoTest-iOS-SDK 文档
 若有自定义更改SDK的需求，你可将仓库克隆到本地，自行修改后执行编译脚本打包，操作如下：
 
 ```shell
-➜  git clone https://github.com/YoTest-team/YoTest-iOS-SDK.git
-➜  cd YoTest-iOS-SDK
-➜  ./build.sh
+> git clone https://github.com/YoTest-team/YoTest-iOS-SDK.git
+> cd YoTest-iOS-SDK
+> ./build.sh
 ```
 
 <img src="./Res/build.gif" alt="show" />
@@ -51,10 +51,10 @@ YoTest-iOS-SDK 文档
 
 ### 快速开始
 
-第一步，克隆最新Tag代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在Podfile中添加 `pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装）：
+第一步，克隆最新 Tag 代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在Podfile中添加 `pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装）：
 
 ```shell
-➜ git clone -b 1.0.1 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
+> git clone -b 1.0.1 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
 ```
 
 第二步，在 Appdelegate 中添加注册 SDK 的代码，如图所示：
