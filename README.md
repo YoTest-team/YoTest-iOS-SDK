@@ -7,7 +7,11 @@ YoTest-iOS-SDK 文档
 * [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85)
 * [编译(自定义)](https://github.com/YoTest-team/YoTest-iOS-SDK#%E7%BC%96%E8%AF%91%E8%87%AA%E5%AE%9A%E4%B9%89)
 * [快速开始](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
-* [API](#API)
+* [API](https://github.com/YoTest-team/YoTest-iOS-SDK#api)
+
+### 仓库入口：
+<a href="https://gitee.com/yo-test-team/yo-test-i-os-sdk"><img src="./Res/gitee2.png" width="30px"/></a>&nbsp;&nbsp;
+<a href="https://github.com/YoTest-team/YoTest-iOS-SDK"><img src="./Res/GitHub.png" width="32px"/></a>
 
 ### 兼容性
 
@@ -16,13 +20,13 @@ YoTest-iOS-SDK 文档
 
 ### 安装
 
-* 方法一，使用[xcframework](https://github.com/bielikb/xcframeworks)（推荐）
+#### 方法一，使用 [xcframework](https://github.com/bielikb/xcframeworks)（推荐）
 	
 下载最新 [Tag](https://github.com/bielikb/xcframeworks/releases)，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
 	
 <img src="./Res/install.gif" alt="show" />
 
-* 方法二，使用[CocoaPods](https://cocoapods.org/)
+#### 方法二，使用 [CocoaPods](https://cocoapods.org/)
 
 在 Podfile 中添加`pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装。
 
@@ -38,17 +42,15 @@ YoTest-iOS-SDK 文档
 
 <img src="./Res/build.gif" alt="show" />
 
-编译好后，可以按照[安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85)中的步骤，添加到工程项目中
+编译好后，可以按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤，添加到工程项目中。
 
 ### 快速开始
 
-第一步，克隆最新Tag代码（不使用[CocoaPods](https://cocoapods.org/)）
+第一步，克隆最新Tag代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在Podfile中添加 `pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装）：
 
 ```shell
 ➜ git clone -b 1.0.1 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
 ```
-
-下载好后按照[安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85)中的步骤添加到工程项目中（若您使用的是[CocoaPods](https://cocoapods.org/)，在Podfile中添加 `pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装）。
 
 第二步，在 Appdelegate 中添加注册 SDK 的代码，如图所示：
 
@@ -102,36 +104,38 @@ captcha?.verify()
 
 YoTest类：
 
-* [public static func registSDK(auth, on)](#registSDK)
-* [public static func destroy()](#destroy)
-* [public init(with:) throws](#YoTest.init)
-* [public func verify()](#verify)
-* [public func close()](#close)
-* [public func cancel()](#cancel)
-* [public weak var delegate: YoTestDelegate?](#delegate)
-* [public var autoShowLoading: Bool](#autoShowLoading)
-* [public var autoShowToast: Bool](#autoShowToast)
+* [public static func registSDK(auth, on)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-static-func-registsdkauth-yotestauth-on-escaping-bool---void)
+* [public static func destroy()](https://github.com/YoTest-team/YoTest-iOS-SDK#public-static-func-destroy)
+* [public init(with:) throws](https://github.com/YoTest-team/YoTest-iOS-SDK#public-initwith-yotestdelegate-throws)
+* [public func verify()](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-verify)
+* [public func close()](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-close)
+* [public func cancel()](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-cancel)
+* [public weak var delegate: YoTestDelegate?](https://github.com/YoTest-team/YoTest-iOS-SDK#public-weak-var-delegate-yotestdelegate)
+* [public var autoShowLoading: Bool](https://github.com/YoTest-team/YoTest-iOS-SDK#public-var-autoshowloading-bool)
+* [public var autoShowToast: Bool](https://github.com/YoTest-team/YoTest-iOS-SDK#public-var-autoshowtoast-bool)
 
 YoTest.Auth结构体：
 
-* [public init(accessId:)](#Auth.init)
+* [public init(accessId:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-initaccessid-string)
 
-[YoTest.YTError](#YTError)
+YoTest.YTError：
 
-* [public let code: Code](#code)
+* [public let code: Code](https://github.com/YoTest-team/YoTest-iOS-SDK#public-let-code-code)
 
 YoTest.YTError.Code枚举：
 
-* [case requesting](#Code.requesting)
-* [case unavailable](#Code.unavailable)
+* [case requesting](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onreadyargs-string-any)
+* [case unavailable](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onreadyargs-string-any)
 
 YoTestDelegate协议：
 
-* [public func onReady(args:)](#onReady)
-* [public func onSuccess(args:)](#onSuccess)
-* [public func onShow(args:)](#onShow)
-* [public func onError(args:)](#onError)
-* [public func onClose(args:)](#onClose)
+* [public func onReady(args:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onreadyargs-string-any)
+* [public func onSuccess(args:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onsuccessargs-string-any)
+* [public func onShow(args:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onshowargs-string-any)
+* [public func onError(args:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-onerrorargs-string-any)
+* [public func onClose(args:)](https://github.com/YoTest-team/YoTest-iOS-SDK#public-func-oncloseargs-string-any)
+
+### **YoTest：**
 
 #### public static func registSDK(auth: YoTest.Auth, on: @escaping (Bool) -> Void)
 - auth \<YoTest.Auth\>
@@ -139,9 +143,15 @@ YoTestDelegate协议：
 
 注册SDK，需要在使用SDK进行人机验证前调用。可以添加到AppDelegate中，启动 App 时注册
 
+```swift
+```
+
 #### public static func destroy()
 
 销毁资源。不再使用SDK时，可以调用 YoTest.destroy() 方法来回收部分资源
+
+```swift
+```
 
 #### public init(with: YoTestDelegate?) throws
 
@@ -150,35 +160,63 @@ YoTestDelegate协议：
 
 初始化 YoTest 实例对象。
 
+```swift
+```
+
 #### public func verify()
 
 调起验证界面
+
+```swift
+```
 
 #### public func close()
 
 关闭验证界面
 
+```swift
+```
+
 #### public func cancel()
 
 取消验证
 
+```swift
+```
+
 #### public weak var delegate: YoTestDelegate?
 
-代理对象
+代理对象的获取和设置
+
+```swift
+```
 
 #### public var autoShowLoading: Bool
 
 是否显示 SDK 提供的 loading，默认为true，可以设置为false来关闭
 
+```swift
+```
+
 #### public var autoShowToast: Bool
 
 是否显示SDK提供的Toast，默认为true，可以设置为false来关闭
+
+```swift
+```
+
+### **YoTest.Auth：**
 
 #### public init(accessId: String)
 
 - accessId \<String\> 友验后台申请的accessId
 
 初始化 Auth 对象。
+
+```swift
+```
+
+### **YoTest.YTError.Code：**
 
 #### public let code: Code
 
@@ -189,23 +227,39 @@ YoTestDelegate协议：
 |    case requesting   |  正在请求授权 |
 |    case unavailable  |  SDK不可用，请检查accessId是否正确，网络是否通畅 |
 
+### **YoTestDelegate：**
 
 #### public func onReady(args: [String: Any])
 
 验证已准备就绪的回调
 
+```swift
+```
+
 #### public func onSuccess(args: [String: Any])
 
 验证成功时的回调
+
+```swift
+```
 
 #### public func onShow(args: [String: Any])
 
 验证弹框即将显示的回调
 
+```swift
+```
+
 #### public func onError(args: [String: Any])
 
 验证错误回调
 
+```swift
+```
+
 #### public func onClose(args: [String: Any])
 
 验证关闭时回调
+
+```swift
+```
