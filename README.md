@@ -232,7 +232,7 @@ YoTestDelegate协议：
 |      错误码         |    描述   |
 | ------------- | ---------- |
 |    case requesting   |  正在请求授权 |
-|    case unavailable  |  SDK不可用，请检查accessId是否正确，网络是否通畅 |
+|    case unavailable  |  服务不可用，请检查accessId是否正确或网络是否正常 |
 
 ### **YoTestDelegate：**
 
