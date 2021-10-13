@@ -16,13 +16,13 @@ YoTest-iOS-SDK 文档
 
 ### 安装
 
-* 使用[xcframework](https://github.com/bielikb/xcframeworks)（推荐）
+* 方法一，使用[xcframework](https://github.com/bielikb/xcframeworks)（推荐）
 	
-下载最新[Tag](https://github.com/bielikb/xcframeworks/releases)，将[YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework)文件夹下的YoTestSDK.xcframework拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
+下载最新 [Tag](https://github.com/bielikb/xcframeworks/releases)，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
 	
 <img src="./Res/install.gif" alt="show" />
 
-* 使用[CocoaPods](https://cocoapods.org/)
+* 方法二，使用[CocoaPods](https://cocoapods.org/)
 
 在 Podfile 中添加`pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装。
 
