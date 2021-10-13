@@ -60,7 +60,9 @@ YoTest-iOS-SDK 文档
 第二步，在 Appdelegate 中添加注册 SDK 的代码，如图所示：
 
 ```swift
-YoTest.registSDK(auth: .init(accessId: "在这里填写你的 accessId")) { success in
+YoTest.registSDK(auth: .init(
+    accessId: "填写项目的accessId，可在友验后台查看"
+)) { success in
     print("regist success: \(success)")
 }
 ```
