@@ -151,6 +151,16 @@ YoTestDelegate协议：
 注册SDK，需要在使用SDK进行人机验证前调用。可以添加到AppDelegate中，启动 App 时注册
 
 ```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Override point for customization after application launch.
+    ...    
+    YoTest.logLevel = .verbose
+    YoTest.registSDK(auth: .init(accessId: "在这里填写你的accessId")) { success in
+        print("regist success: \(success)")
+    }
+    ...
+    return true
+}
 ```
 
 #### public static func destroy()
@@ -158,6 +168,8 @@ YoTestDelegate协议：
 销毁资源。不再使用SDK时，可以调用 YoTest.destroy() 方法来回收部分资源
 
 ```swift
+/// 不再使用时
+YoTest.destroy()
 ```
 
 #### public init(with: YoTestDelegate?) throws
@@ -168,6 +180,11 @@ YoTestDelegate协议：
 初始化 YoTest 实例对象。
 
 ```swift
+do {
+    let captcha = try YoTest(with: nil)
+} catch {
+    print("error: \(error)")
+}
 ```
 
 #### public func verify()
@@ -175,20 +192,43 @@ YoTestDelegate协议：
 调起验证界面
 
 ```swift
+do {
+    let captcha = try YoTest(with: nil)
+    captcha.verify()
+} catch {
+    print("error: \(error)")
+}
 ```
 
 #### public func close()
 
-关闭验证界面
+关闭验证界面。在 YoTestDelegate 的 onClose 方法回调时调用 close() 方法
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func onClose(args: [String : Any]) {
+    captcha?.close()
+}
+...
+}
 ```
 
 #### public func cancel()
 
-取消验证
+取消验证。
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func cancelVerify() {
+    captcha?.cancel()
+}
+...
 ```
 
 #### public weak var delegate: YoTestDelegate?
@@ -196,6 +236,14 @@ YoTestDelegate协议：
 代理对象的获取和设置
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func setDelegate() {
+	captcha?.delegate = self
+}
+...
 ```
 
 #### public var autoShowLoading: Bool
@@ -203,6 +251,14 @@ YoTestDelegate协议：
 是否显示 SDK 提供的 loading，默认为true，可以设置为false来关闭
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func dontShowLoading() {
+	captcha?. autoShowLoading = false
+}
+...
 ```
 
 #### public var autoShowToast: Bool
@@ -210,6 +266,14 @@ YoTestDelegate协议：
 是否显示SDK提供的Toast，默认为true，可以设置为false来关闭
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func dontShowToast() {
+	captcha?.autoShowToast = false
+}
+...
 ```
 
 ### **YoTest.Auth：**
@@ -221,6 +285,7 @@ YoTestDelegate协议：
 初始化 Auth 对象。
 
 ```swift
+YoTest.Auth(accessId: "友验后台申请的 accessId")
 ```
 
 ### **YoTest.YTError.Code：**
@@ -241,6 +306,12 @@ YoTestDelegate协议：
 验证已准备就绪的回调
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+func onReady(args: [String: Any]) {
+	// 在这里实现自己的代码逻辑
+}
+...
 ```
 
 #### public func onSuccess(args: [String: Any])
@@ -248,6 +319,12 @@ YoTestDelegate协议：
 验证成功时的回调
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+func onReady(args: [String: Any]) {
+	// 在这里实现自己的代码逻辑
+}
+...
 ```
 
 #### public func onShow(args: [String: Any])
@@ -255,6 +332,12 @@ YoTestDelegate协议：
 验证弹框即将显示的回调
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+func onShow(args: [String: Any]) {
+	// 在这里实现自己的代码逻辑
+}
+...
 ```
 
 #### public func onError(args: [String: Any])
@@ -262,6 +345,12 @@ YoTestDelegate协议：
 验证错误回调
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+func onError(args: [String: Any]) {
+	// 在这里实现自己的代码逻辑
+}
+...
 ```
 
 #### public func onClose(args: [String: Any])
@@ -269,4 +358,14 @@ YoTestDelegate协议：
 验证关闭时回调
 
 ```swift
+class YourClass: NSObject, YoTestDelegate {
+...
+var captcha: YoTest?
+...
+func onClose(args: [String: Any]) {
+    // 记得调用 captcha.close()
+    captcha?.close()
+    // 在这里实现自己的代码逻辑
+}
+...
 ```
