@@ -28,7 +28,7 @@ extension YoTest {
                                        toItem: nil,
                                        attribute: .notAnAttribute,
                                        multiplier: 0,
-                                       constant: 70)
+                                       constant: 85)
         width.isActive = true
         
         let height = NSLayoutConstraint(item: loading,
@@ -37,7 +37,7 @@ extension YoTest {
                                         toItem: nil,
                                         attribute: .notAnAttribute,
                                         multiplier: 0,
-                                        constant: 70)
+                                        constant: 85)
         height.isActive = true
         
         YoTest.keyWindow.addSubview(loading)

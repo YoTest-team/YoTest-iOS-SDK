@@ -247,12 +247,6 @@ public final class YoTest: NSObject {
         bridge = JS.DispatchBridge(webview: YoTest.webview,
                                    bridger: "YoTestCaptcha")
         
-        bridge.add(JS: Responder.Ready(pass))
-        bridge.add(JS: Responder.Success(pass))
-        bridge.add(JS: Responder.Show(pass))
-        bridge.add(JS: Responder.Error(pass))
-        bridge.add(JS: Responder.Close(pass))
-        
         super.init()
         YoTest.webview.navigationDelegate = self
         pass.host = self
@@ -280,6 +274,13 @@ public final class YoTest: NSObject {
         webview.removeFromSuperview()
         webview.frame = YoTest.keyWindow.bounds
         mask.addSubview(webview)
+        
+        bridge.add(JS: Responder.Ready(pass))
+        bridge.add(JS: Responder.Success(pass))
+        bridge.add(JS: Responder.Show(pass))
+        bridge.add(JS: Responder.Error(pass))
+        bridge.add(JS: Responder.Close(pass))
+        
         webview.load(URLRequest(url: url))
         
         if autoShowLoading {
@@ -287,8 +288,14 @@ public final class YoTest: NSObject {
         }
     }
     
+    private let blanckURL = "about:blanck?arg=yotest"
+    
     public func close() {
+        bridge.removeAll()
         YoTest.back_webview?.stopLoading()
+        if let url = URL(string: blanckURL) {
+            YoTest.back_webview?.load(URLRequest(url: url))
+        }
         YoTest.back_webview?.superview?.removeFromSuperview()
         YoTest.back_webview?.removeFromSuperview()
     }
@@ -307,6 +314,10 @@ public final class YoTest: NSObject {
 extension YoTest: WKNavigationDelegate {
     public func webView(_ webView: WKWebView,
                         didFinish navigation: WKNavigation!) {
+        if let url = webView.url?.absoluteString,
+           url == blanckURL {
+            return
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.bridge.callback(to: "verify",
                                  args: ["accessId": YoTest.authorize.accessId,
