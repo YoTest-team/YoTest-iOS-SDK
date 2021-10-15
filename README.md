@@ -1,6 +1,8 @@
 YoTest-iOS-SDK 文档
 ----
 
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YoTestSDK.svg)](https://img.shields.io/cocoapods/v/YoTestSDK.svg)
+
 > 基于虚拟机保护、设备特征识别和操作行为识别的新一代智能验证码，具备智能评分、抗 Headless、模拟伪装、针对恶意设备自动提升验证难度等多项安全措施，帮助开发者减少恶意攻击导致的数字资产损失，强力护航业务安全。
 
 * [仓库入口](https://github.com/YoTest-team/YoTest-iOS-SDK#%E4%BB%93%E5%BA%93%E5%85%A5%E5%8F%A3)
@@ -10,9 +12,6 @@ YoTest-iOS-SDK 文档
 * [自定义编译](https://github.com/YoTest-team/YoTest-iOS-SDK#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91)
 * [快速开始](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
 * [API](https://github.com/YoTest-team/YoTest-iOS-SDK#api)
-
-
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YoTestSDK.svg)](https://img.shields.io/cocoapods/v/YoTestSDK.svg)
 
 ### 仓库入口：
 <a href="https://gitee.com/yo-test-team/yo-test-i-os-sdk"><img src="./Res/gitee2.png" width="30px"/></a>&nbsp;&nbsp;
