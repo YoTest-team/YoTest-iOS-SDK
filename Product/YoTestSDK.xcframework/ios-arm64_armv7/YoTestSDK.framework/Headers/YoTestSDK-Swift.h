@@ -211,7 +211,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-/// 友验
 SWIFT_CLASS("_TtC9YoTestSDK6YoTest")
 @interface YoTest : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -447,7 +446,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-/// 友验
 SWIFT_CLASS("_TtC9YoTestSDK6YoTest")
 @interface YoTest : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

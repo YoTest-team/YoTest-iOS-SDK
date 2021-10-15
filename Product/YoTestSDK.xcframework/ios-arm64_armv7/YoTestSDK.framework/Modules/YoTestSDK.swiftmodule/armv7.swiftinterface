@@ -37,9 +37,12 @@ public protocol YoTestDelegate : AnyObject {
     get
     set
   }
+  final public var autoShowLoading: Swift.Bool
+  final public var autoShowToast: Swift.Bool
   public init(with delegate: YoTestSDK.YoTestDelegate?) throws
   final public func verify()
   final public func close()
+  final public func cancel()
   @objc deinit
 }
 extension YoTestSDK.YoTest : WebKit.WKNavigationDelegate {
