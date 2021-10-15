@@ -11,6 +11,9 @@ YoTest-iOS-SDK 文档
 * [快速开始](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
 * [API](https://github.com/YoTest-team/YoTest-iOS-SDK#api)
 
+
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/YoTestSDK.svg)](https://img.shields.io/cocoapods/v/YoTestSDK.svg)
+
 ### 仓库入口：
 <a href="https://gitee.com/yo-test-team/yo-test-i-os-sdk"><img src="./Res/gitee2.png" width="30px"/></a>&nbsp;&nbsp;
 <a href="https://github.com/YoTest-team/YoTest-iOS-SDK"><img src="./Res/GitHub.png" width="32px"/></a>
