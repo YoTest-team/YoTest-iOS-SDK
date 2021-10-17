@@ -15,22 +15,12 @@ class iRTCAudioController {
 	
 	static private var audioCategory : AVAudioSession.Category = AVAudioSession.Category.playAndRecord
 
-    static private var audioCategoryOptions : AVAudioSession.CategoryOptions = {
-        if #available(iOS 10.0, *) {
-            return [
-                AVAudioSession.CategoryOptions.mixWithOthers,
-                AVAudioSession.CategoryOptions.allowBluetooth,
-                AVAudioSession.CategoryOptions.allowAirPlay,
-                AVAudioSession.CategoryOptions.allowBluetoothA2DP
-            ]
-        } else {
-            // Fallback on earlier versions
-            return [
-                AVAudioSession.CategoryOptions.mixWithOthers,
-                AVAudioSession.CategoryOptions.allowBluetooth
-            ]
-        }
-    }()
+	static private var audioCategoryOptions : AVAudioSession.CategoryOptions = [
+		AVAudioSession.CategoryOptions.mixWithOthers,
+		AVAudioSession.CategoryOptions.allowBluetooth,
+		AVAudioSession.CategoryOptions.allowAirPlay,
+		AVAudioSession.CategoryOptions.allowBluetoothA2DP
+	]
 
 	/*
 	 This mode is intended for Voice over IP (VoIP) apps and can only be used with the playAndRecord category. When this mode is used, the device’s tonal equalization is optimized for voice and the set of allowable audio routes is reduced to only those appropriate for voice chat.
@@ -64,15 +54,11 @@ class iRTCAudioController {
 		
 		do {
 			let audioSession: AVAudioSession = AVAudioSession.sharedInstance()
-            if #available(iOS 10.0, *) {
-                try audioSession.setCategory(
-                    iRTCAudioController.audioCategory,
-                    mode: iRTCAudioController.audioMode,
-                    options: iRTCAudioController.audioCategoryOptions
-                )
-            } else {
-                // Fallback on earlier versions
-            }
+			try audioSession.setCategory(
+				iRTCAudioController.audioCategory,
+				mode: iRTCAudioController.audioMode,
+				options: iRTCAudioController.audioCategoryOptions
+			)
 		} catch {
 			NSLog("iRTCAudioController#setCategory() | ERROR \(error)")
 		};

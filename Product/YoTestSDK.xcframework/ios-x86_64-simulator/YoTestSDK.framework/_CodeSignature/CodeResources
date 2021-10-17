@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DEvCYWDsZvQU20D3ppHf7TM+YnY=
+		jKFxKI8yR/b5e1w7kzrfEJwKNhY=
 		</data>
 		<key>Loading.bundle/000.png</key>
 		<data>
@@ -114,27 +114,27 @@
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		EbKeuOeCg+WcVMHqB+CWftpj52c=
+		s/PWfJz3HE5Se/XMEC4sFqTB4S4=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EioxujEXog81TAbeqEmc80Yf+kI=
+		heXn4sifiSnB91akCk/bBuvCcCs=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bUHmLQPZcHrWwh6viKmydwScyYk=
+		ubv2gxFpk8ERA/6sDUTeOgHgz7Q=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		EbKeuOeCg+WcVMHqB+CWftpj52c=
+		s/PWfJz3HE5Se/XMEC4sFqTB4S4=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		EioxujEXog81TAbeqEmc80Yf+kI=
+		heXn4sifiSnB91akCk/bBuvCcCs=
 		</data>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		bUHmLQPZcHrWwh6viKmydwScyYk=
+		ubv2gxFpk8ERA/6sDUTeOgHgz7Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -445,66 +445,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EbKeuOeCg+WcVMHqB+CWftpj52c=
+			s/PWfJz3HE5Se/XMEC4sFqTB4S4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ysb2is6WSjb/Ppk2L5sA2o16OlDtEj73KPq4B8L48M0=
+			9/RtnFUq5Ds5K6zEMEaO65v7K5C0XCagq7Sc68Ert88=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EioxujEXog81TAbeqEmc80Yf+kI=
+			heXn4sifiSnB91akCk/bBuvCcCs=
 			</data>
 			<key>hash2</key>
 			<data>
-			XzzMNTLDcouWYF9qYhiMKm+T+0sTQmT0M+x64XpTA74=
+			ubPX4RAcx5mHW3J8tIRE2+EwzhCWqJWn4WGLHUaSbdw=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bUHmLQPZcHrWwh6viKmydwScyYk=
+			ubv2gxFpk8ERA/6sDUTeOgHgz7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			gOqzzaevD+XkqYDjJIliuV4ZOXpRKulKKZ8MBFX4iKc=
+			R4cXimoKIt335TL0DlDmzW2ihljeN58wkuiSXzalcmQ=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EbKeuOeCg+WcVMHqB+CWftpj52c=
+			s/PWfJz3HE5Se/XMEC4sFqTB4S4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ysb2is6WSjb/Ppk2L5sA2o16OlDtEj73KPq4B8L48M0=
+			9/RtnFUq5Ds5K6zEMEaO65v7K5C0XCagq7Sc68Ert88=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EioxujEXog81TAbeqEmc80Yf+kI=
+			heXn4sifiSnB91akCk/bBuvCcCs=
 			</data>
 			<key>hash2</key>
 			<data>
-			XzzMNTLDcouWYF9qYhiMKm+T+0sTQmT0M+x64XpTA74=
+			ubPX4RAcx5mHW3J8tIRE2+EwzhCWqJWn4WGLHUaSbdw=
 			</data>
 		</dict>
 		<key>Modules/YoTestSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bUHmLQPZcHrWwh6viKmydwScyYk=
+			ubv2gxFpk8ERA/6sDUTeOgHgz7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			gOqzzaevD+XkqYDjJIliuV4ZOXpRKulKKZ8MBFX4iKc=
+			R4cXimoKIt335TL0DlDmzW2ihljeN58wkuiSXzalcmQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -35,13 +35,7 @@ class iEnumerateDevices {
 		NSLog("iEnumerateDevices#call()")
 		
 		let audioDevices: [MediaDeviceInfo] = getAllAudioDevices()
-        let videoDevices: [MediaDeviceInfo]
-        if #available(iOS 10.0, *) {
-            videoDevices = getAllVideoDevices()
-        } else {
-            // Fallback on earlier versions
-            videoDevices = []
-        }
+		let videoDevices: [MediaDeviceInfo] = getAllVideoDevices()
 		let allDevices = videoDevices + audioDevices;
 		
 		let json: NSMutableDictionary = [
@@ -63,7 +57,6 @@ class iEnumerateDevices {
 	}
 }
 
-@available(iOS 10.0, *)
 fileprivate func getAllVideoDevices() -> [MediaDeviceInfo] {
 	
 	var videoDevicesArr : [MediaDeviceInfo] = []

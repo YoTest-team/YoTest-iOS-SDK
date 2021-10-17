@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Darwel.Z' => 'x1aox1a45py@163.com' }
   s.source           = { :git => 'https://github.com/YoTest-team/YoTest-iOS-SDK.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
-  s.platform = :ios, '9.0'
+  # s.ios.deployment_target = '10.0'
+  s.platform = :ios, '10.0'
   s.swift_version = "5.5"
   s.vendored_frameworks = "Product/YoTestSDK.xcframework"
   s.dependency 'GoogleWebRTC', '1.1.29229'
