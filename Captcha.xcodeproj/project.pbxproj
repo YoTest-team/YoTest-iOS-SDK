@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C7136071270FF40800E2540B /* Loading.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7136070270FF40800E2540B /* Loading.bundle */; };
 		C7136072270FF40800E2540B /* Loading.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7136070270FF40800E2540B /* Loading.bundle */; };
+		C7576E2A271C09DD00A4AE84 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
+		C7576E2B271C09DD00A4AE84 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C7576E30271C0A8400A4AE84 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
+		C7576E31271C0A8400A4AE84 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C764C9292702CAF500A63FBE /* YoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C9282702CAF500A63FBE /* YoTest.swift */; };
 		C764C92C2702D90A00A63FBE /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C92B2702D90A00A63FBE /* Modelable.swift */; };
 		C764C92E2702F37200A63FBE /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C92D2702F37200A63FBE /* Log.swift */; };
@@ -25,8 +29,6 @@
 		C793F4822701C46E00DF7F99 /* Captcha.docc in Sources */ = {isa = PBXBuildFile; fileRef = C793F4812701C46E00DF7F99 /* Captcha.docc */; };
 		C793F4832701C46E00DF7F99 /* Captcha.h in Headers */ = {isa = PBXBuildFile; fileRef = C793F4802701C46E00DF7F99 /* Captcha.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C793F48B2701C4F600DF7F99 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C793F48A2701C4F600DF7F99 /* Bridge.swift */; };
-		C7953100271C04B8002FBA03 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
-		C7953101271C04B8002FBA03 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
 		C795310A271C04B8002FBA03 /* iEnumerateDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79530ED271C04B8002FBA03 /* iEnumerateDevices.swift */; };
 		C795310B271C04B8002FBA03 /* iEnumerateDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79530ED271C04B8002FBA03 /* iEnumerateDevices.swift */; };
 		C795310C271C04B8002FBA03 /* iGetUserMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79530EE271C04B8002FBA03 /* iGetUserMedia.swift */; };
@@ -70,6 +72,31 @@
 		C7FA6B7827086EE1005FCBDE /* Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA6B7727086EE1005FCBDE /* Responder.swift */; };
 		C7FA6B7927086EE1005FCBDE /* Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA6B7727086EE1005FCBDE /* Responder.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7576E2C271C09DD00A4AE84 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C7576E2B271C09DD00A4AE84 /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7576E32271C0A8400A4AE84 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C7576E31271C0A8400A4AE84 /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C713606E270FF06E00E2540B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -120,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7953101271C04B8002FBA03 /* WebRTC.framework in Frameworks */,
+				C7576E30271C0A8400A4AE84 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7953100271C04B8002FBA03 /* WebRTC.framework in Frameworks */,
+				C7576E2A271C09DD00A4AE84 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +358,7 @@
 				C764C93127031FFE00A63FBE /* Sources */,
 				C764C93227031FFE00A63FBE /* Frameworks */,
 				C764C93327031FFE00A63FBE /* Resources */,
+				C7576E32271C0A8400A4AE84 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,6 +377,7 @@
 				C793F4792701C46E00DF7F99 /* Sources */,
 				C793F47A2701C46E00DF7F99 /* Frameworks */,
 				C793F47B2701C46E00DF7F99 /* Resources */,
+				C7576E2C271C09DD00A4AE84 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,6 +576,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -585,6 +615,7 @@
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X\"";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -720,6 +751,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Captcha/RTC/GoogleWebRTC/Frameworks/frameworks",
@@ -746,6 +778,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -759,6 +792,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 0;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Captcha/RTC/GoogleWebRTC/Frameworks/frameworks",
@@ -784,6 +818,7 @@
 				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/Captcha/X/XPrivate\"";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};

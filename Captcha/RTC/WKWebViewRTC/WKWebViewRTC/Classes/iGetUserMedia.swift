@@ -69,7 +69,8 @@ class iGetUserMedia {
 				NSLog("iGetUserMedia#call() | video authorization: restricted")
 				errback("video restricted")
 				return
-			}
+            @unknown default: return
+            }
 		}
 
 		if audioRequested == true {
@@ -91,7 +92,8 @@ class iGetUserMedia {
 				NSLog("iGetUserMedia#call() | audio authorization: restricted")
 				errback("audio restricted")
 				return
-			}
+            @unknown default: return
+            }
 		}
 
 		rtcMediaStream = self.rtcPeerConnectionFactory.mediaStream(withStreamId: UUID().uuidString)

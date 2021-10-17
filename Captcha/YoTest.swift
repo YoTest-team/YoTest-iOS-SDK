@@ -230,6 +230,7 @@ public final class YoTest: NSObject {
     }
     let pass = Pass()
     let bridge: JS.DispatchBridge
+    let RTC: WKWebViewRTC?
     
     public var autoShowLoading: Bool = true
     public var autoShowToast: Bool = true
@@ -246,7 +247,12 @@ public final class YoTest: NSObject {
         pass.delegate = delegate
         bridge = JS.DispatchBridge(webview: YoTest.webview,
                                    bridger: "YoTestCaptcha")
-        
+        if #available(iOS 10, *) {
+            RTC = WKWebViewRTC(wkwebview: YoTest.webview,
+                               contentController: YoTest.webview.configuration.userContentController)
+        } else {
+            RTC = nil
+        }
         super.init()
         YoTest.webview.navigationDelegate = self
         pass.host = self

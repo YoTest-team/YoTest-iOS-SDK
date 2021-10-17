@@ -30,13 +30,18 @@ fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
 	return input.rawValue
 }
 
-@available(iOS 10, *)
 class iEnumerateDevices {
 	class func call(_ callback: (_ data: NSDictionary) -> Void) {
 		NSLog("iEnumerateDevices#call()")
 		
 		let audioDevices: [MediaDeviceInfo] = getAllAudioDevices()
-		let videoDevices: [MediaDeviceInfo] = getAllVideoDevices()
+        let videoDevices: [MediaDeviceInfo]
+        if #available(iOS 10.0, *) {
+            videoDevices = getAllVideoDevices()
+        } else {
+            // Fallback on earlier versions
+            videoDevices = []
+        }
 		let allDevices = videoDevices + audioDevices;
 		
 		let json: NSMutableDictionary = [
@@ -58,7 +63,7 @@ class iEnumerateDevices {
 	}
 }
 
-@available(iOS 10, *)
+@available(iOS 10.0, *)
 fileprivate func getAllVideoDevices() -> [MediaDeviceInfo] {
 	
 	var videoDevicesArr : [MediaDeviceInfo] = []
@@ -94,7 +99,7 @@ fileprivate func getAllVideoDevices() -> [MediaDeviceInfo] {
 		case AVCaptureDevice.Position.front:
 			facing = "front"
 			facingLabel = "Front Camera"
-        @unknown default: break
+        @unknown default: continue
         }
 		
 		if device.isConnected == false || (hasAudio == false && hasVideo == false) {

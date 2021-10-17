@@ -12,7 +12,7 @@ import AVFoundation
 import WebRTC
 import WebKit
 
-public class WKWebViewRTC : NSObject {
+class WKWebViewRTC : NSObject {
 	// RTCPeerConnectionFactory single instance.
 	var rtcPeerConnectionFactory: RTCPeerConnectionFactory!
 	// Single PluginGetUserMedia instance.
@@ -33,7 +33,7 @@ public class WKWebViewRTC : NSObject {
     
 
 	// This is just called if <param name="onload" value="true" /> in plugin.xml.
-    public init(wkwebview:WKWebView?, contentController: WKUserContentController?) {
+    init(wkwebview:WKWebView?, contentController: WKUserContentController?) {
 		NSLog("WKWebViewRTC#init()")
         super.init()
 
@@ -1112,7 +1112,8 @@ public class WKWebViewRTC : NSObject {
 				case AVAuthorizationStatus.restricted:
 					NSLog("PluginGetUserMedia#call() | video authorization: restricted")
 					status = false
-				}
+                @unknown default: status = false
+                }
 			}
 
 			if audioRequested == true {
@@ -1127,7 +1128,8 @@ public class WKWebViewRTC : NSObject {
 				case AVAuthorizationStatus.restricted:
 					NSLog("PluginGetUserMedia#call() | audio authorization: restricted")
 					status = false
-				}
+                @unknown default: status = false
+                }
 			}
 
 			if (status) {
@@ -1254,14 +1256,14 @@ public class WKWebViewRTC : NSObject {
 		}
 
 		// Close All MediaStream
-		for (streamId, pluginMediaStream) in self.pluginMediaStreams {
+		for (_, pluginMediaStream) in self.pluginMediaStreams {
 			// Store its PluginMediaStreamTracks' into the dictionary.
-			for (trackId, pluginMediaStreamTrack) in pluginMediaStream.audioTracks {
+			for (_, pluginMediaStreamTrack) in pluginMediaStream.audioTracks {
 				pluginMediaStream.removeTrack(pluginMediaStreamTrack);
 				deleteMediaStreamTrack(pluginMediaStreamTrack);
 			}
 
-			for (trackId, pluginMediaStreamTrack) in pluginMediaStream.videoTracks {
+			for (_, pluginMediaStreamTrack) in pluginMediaStream.videoTracks {
 				pluginMediaStream.removeTrack(pluginMediaStreamTrack);
 				deleteMediaStreamTrack(pluginMediaStreamTrack);
 			}
@@ -1270,7 +1272,7 @@ public class WKWebViewRTC : NSObject {
 		}
 
 		// Close All MediaStreamTracks without MediaStream
-		for (trackId, pluginMediaStreamTrack) in self.pluginMediaStreamTracks {
+		for (_, pluginMediaStreamTrack) in self.pluginMediaStreamTracks {
 			deleteMediaStreamTrack(pluginMediaStreamTrack);
 		}
 	}
@@ -1282,7 +1284,7 @@ public class WKWebViewRTC : NSObject {
 }
 
 extension WKWebViewRTC : WKScriptMessageHandler {
-	public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+	func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("WKWebViewRTC#userContentController(). name=\(message.name)")
         if (message.name == "native_console_log")
         {

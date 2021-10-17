@@ -15,7 +15,7 @@ import func ObjectiveC.objc_getAssociatedObject
 import func ObjectiveC.objc_setAssociatedObject
 import enum ObjectiveC.objc_AssociationPolicy
 
-public func objc_getx<TargetObject: AnyObject, AssociatedObject: AnyObject>
+func objc_getx<TargetObject: AnyObject, AssociatedObject: AnyObject>
 	(object getObject: @autoclosure () -> AssociatedObject,
 	 associatedTo target:TargetObject,
 	 withConstPtrKey ptr:UnsafeRawPointer)
@@ -149,7 +149,7 @@ class iRTCVideoCaptureController : NSObject {
 		return device != nil;
 	}
 	
-	func startCapture() -> Bool {
+    @discardableResult func startCapture() -> Bool {
 		
 		// Stop previous capture in case of setConstraints, followed by startCapture
 		// aka future applyConstraints
@@ -304,7 +304,7 @@ class iRTCVideoCaptureController : NSObject {
 		return captureDevices.firstObject as? AVCaptureDevice
 	}
 	
-	func switchCamera() -> Bool {
+    @discardableResult func switchCamera() -> Bool {
 		
 		if (self.capturer.captureSession.isRunning) {
 			self.capturer.stopCapture()

@@ -297,8 +297,8 @@ class iRTCPeerConnection : NSObject, RTCPeerConnectionDelegate {
 			}
 
 			callback(data)
-		} else {
-			errback()
+//		} else {
+//			errback()
 		}
 	}
 
