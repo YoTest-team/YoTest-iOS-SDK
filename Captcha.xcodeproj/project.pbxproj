@@ -10,7 +10,6 @@
 		C7136071270FF40800E2540B /* Loading.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7136070270FF40800E2540B /* Loading.bundle */; };
 		C7136072270FF40800E2540B /* Loading.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C7136070270FF40800E2540B /* Loading.bundle */; };
 		C7576E2A271C09DD00A4AE84 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
-		C7576E2B271C09DD00A4AE84 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7576E30271C0A8400A4AE84 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; };
 		C7576E31271C0A8400A4AE84 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C79530E5271C04B8002FBA03 /* WebRTC.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C764C9292702CAF500A63FBE /* YoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764C9282702CAF500A63FBE /* YoTest.swift */; };
@@ -74,17 +73,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C7576E2C271C09DD00A4AE84 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C7576E2B271C09DD00A4AE84 /* WebRTC.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C7576E32271C0A8400A4AE84 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,7 +365,6 @@
 				C793F4792701C46E00DF7F99 /* Sources */,
 				C793F47A2701C46E00DF7F99 /* Frameworks */,
 				C793F47B2701C46E00DF7F99 /* Resources */,
-				C7576E2C271C09DD00A4AE84 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9426ZYLJTX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,7 +574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9426ZYLJTX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -653,7 +640,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -717,7 +704,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -746,10 +733,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -787,10 +774,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 0;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

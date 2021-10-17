@@ -36,7 +36,7 @@ output_name="YoTestSDK"
 xcodebuild -create-xcframework \
   -framework Archive/$scheme-iOS.xcarchive/Products/Library/Frameworks/$scheme.framework \
   -framework Archive/$scheme-iOS-Simulator.xcarchive/Products/Library/Frameworks/$scheme.framework \
-  -framework Captcha/RTC/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework \
   -output Build/$output_name.xcframework
 
 cp -r -p Build/$output_name.xcframework Product/$output_name.xcframework
+cp -r -p Captcha/RTC/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework Product/WebRTC.framework

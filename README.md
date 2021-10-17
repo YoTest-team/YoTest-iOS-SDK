@@ -29,13 +29,13 @@ YoTest-iOS-SDK 文档
 
 #### 方法一，使用 [xcframework](https://github.com/bielikb/xcframeworks)（推荐）
 	
-下载 YoTest-iOS-SDK 最新 Tag 代码，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
+下载 YoTest-iOS-SDK 最新 Tag 代码，将 [YoTest-iOS-SDK/Product](https://github.com/YoTest-team/YoTest-iOS-SDK/tree/main/Product/YoTestSDK.xcframework) 文件夹下的 YoTestSDK.xcframework 以及 WebRTC.framework 拖到您的工程目录里，并将动态库设置成 Embed&Sign，操作如下所示：
 	
 <img src="./Res/install.gif" alt="show" />
 
 #### 方法二，使用 [CocoaPods](https://cocoapods.org/)
 
-在 Podfile 中添加`pod 'YoTestSDK', '1.0.0'`并执行 `pod insall` 进行安装。
+在 Podfile 中添加`pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装。
 
 ### 自定义编译
 
@@ -53,10 +53,10 @@ YoTest-iOS-SDK 文档
 
 ### 快速开始
 
-第一步，克隆最新 Tag 代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在 Podfile 中添加 `pod 'YoTestSDK', '1.0.0'`并执行 `pod insall` 进行安装）：
+第一步，克隆最新 Tag 代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在 Podfile 中添加 `pod 'YoTestSDK', '1.0.1'`并执行 `pod insall` 进行安装）：
 
 ```shell
-> git clone -b 1.0.0 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
+> git clone -b 1.0.1 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
 ```
 
 第二步，在 Appdelegate 中添加注册 SDK 的代码，如图所示：
