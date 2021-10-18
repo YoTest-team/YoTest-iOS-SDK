@@ -35,7 +35,7 @@ YoTest-iOS-SDK 文档
 
 #### 方法二，使用 [CocoaPods](https://cocoapods.org/)
 
-在 Podfile 中添加`pod 'YoTestSDK', '1.0.2'`并执行 `pod insall` 进行安装。
+在 Podfile 中添加`pod 'YoTestSDK', '1.0.3'`并执行 `pod insall` 进行安装。
 
 ### 自定义编译
 
@@ -53,10 +53,10 @@ YoTest-iOS-SDK 文档
 
 ### 快速开始
 
-第一步，克隆最新 Tag 代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在 Podfile 中添加 `pod 'YoTestSDK', '1.0.2'`并执行 `pod insall` 进行安装）：
+第一步，克隆最新 Tag 代码，下载好后按照 [安装](https://github.com/YoTest-team/YoTest-iOS-SDK#%E5%AE%89%E8%A3%85) 中的步骤添加到工程项目中（若您使用的是 [CocoaPods](https://cocoapods.org/)，在 Podfile 中添加 `pod 'YoTestSDK', '1.0.3'`并执行 `pod insall` 进行安装）：
 
 ```shell
-> git clone -b 1.0.2 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
+> git clone -b 1.0.3 --depth=1 https://github.com/YoTest-team/YoTest-iOS-SDK.git
 ```
 
 第二步，在 Appdelegate 中添加注册 SDK 的代码，如图所示：
